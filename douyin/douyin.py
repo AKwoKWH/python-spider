@@ -62,6 +62,7 @@ class DouYin(object):
 			while req.status_code != 200:
 				req = requests.get(user_url, headers=self.headers)
 			html = json.loads(req.text)
+			print(html)
 			for each in html['aweme_list']:
 				try:
 					url = 'https://aweme.snssdk.com/aweme/v1/play/?video_id=%s&line=0&ratio=720p&media_type=4&vr_type=0&improve_bitrate=0&is_play_url=1&is_support_h265=0&source=PackSourceEnum_PUBLISH'
